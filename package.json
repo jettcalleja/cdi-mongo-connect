@@ -1,0 +1,23 @@
+{
+  "name": "cdi-mongo-connect",
+  "version": "0.0.0",
+  "description": "mongo connect once",
+  "main": "index.js",
+  "scripts": {
+    "babel-build": "babel --presets es2015 lib -d dist"
+  },
+  "keywords": [
+    "mongo",
+    "connect",
+    "node"
+  ],
+  "author": "Code Disruptors Inc",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^2.2.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0"
+  }
+}

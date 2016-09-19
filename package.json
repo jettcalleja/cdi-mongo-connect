@@ -12,6 +12,7 @@
     "node"
   ],
   "author": "Code Disruptors Inc",
+  "homepage": "https://github.com/jettcalleja/cdi-mongo-connect",
   "license": "MIT",
   "dependencies": {
     "mongodb": "^2.2.10"

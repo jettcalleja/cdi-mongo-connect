@@ -8,7 +8,7 @@ Made for our [boilerplate](https://github.com/jettcalleja/cdi-mongo-express).
 npm install cdi-mongo-connect --save
 ```
 
-# Features
+# Feature(s?)
 
 * Mongo connect only once! 
 
@@ -24,6 +24,16 @@ mongo.connect({
     port: 27017,
     database: 'testdb'
 });
+
+// with auth
+mongo.connect({
+    host: 'localhost',
+    user: 'john',
+    password: 'password',
+    port: 27017,
+    database: 'testdb'
+});
+
 
 ```
 ### Doing a single query

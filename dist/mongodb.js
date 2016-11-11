@@ -12,6 +12,7 @@ var MongoConnect = function () {
 
         this._logger = console;
         this.db = null;
+        this.url = 'mongodb://';
     }
 
     _createClass(MongoConnect, [{
@@ -25,7 +26,19 @@ var MongoConnect = function () {
         value: function connect(config) {
             var _this = this;
 
-            mongodb.connect('mongodb://' + config.host + ':' + config.port + '/' + config.database, function (err, db) {
+            var auth = '';
+
+            if (config.user) {
+                auth = config.user + ':' + (config.password || '');
+            }
+
+            if (!!auth) {
+                this.url += auth + '@';
+            }
+
+            this.url += config.host + ':' + config.port + ':' + '/' + config.database;
+
+            mongodb.connect(this.url, function (err, db) {
                 if (err) {
                     _this._logger.log('error', 'Error connecting to database');
                     throw new Error('Check the db config');

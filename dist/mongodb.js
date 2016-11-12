@@ -38,8 +38,10 @@ var MongoConnect = function () {
                 }
 
                 this.url += config.host + ':' + config.port + ':' + '/' + config.database;
-            } else {
+            } else if (typeof config === 'string') {
                 this.url === config;
+            } else {
+                throw new TypeError('Connect parameter must be string or object.');
             }
 
             mongodb.connect(this.url, function (err, db) {

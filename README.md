@@ -34,6 +34,8 @@ mongo.connect({
     database: 'testdb'
 });
 
+// with URL string
+mongo.connect('mongodb://localhost:27017/myproject');
 
 ```
 ### Doing a single query

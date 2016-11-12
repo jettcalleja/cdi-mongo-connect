@@ -26,17 +26,21 @@ var MongoConnect = function () {
         value: function connect(config) {
             var _this = this;
 
-            var auth = '';
+            if (config === Object(config)) {
+                var auth = '';
 
-            if (config.user) {
-                auth = config.user + ':' + (config.password || '');
+                if (config.user) {
+                    auth = config.user + ':' + (config.password || '');
+                }
+
+                if (!!auth) {
+                    this.url += auth + '@';
+                }
+
+                this.url += config.host + ':' + config.port + ':' + '/' + config.database;
+            } else {
+                this.url === config;
             }
-
-            if (!!auth) {
-                this.url += auth + '@';
-            }
-
-            this.url += config.host + ':' + config.port + ':' + '/' + config.database;
 
             mongodb.connect(this.url, function (err, db) {
                 if (err) {

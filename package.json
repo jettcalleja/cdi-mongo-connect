@@ -1,6 +1,6 @@
 {
   "name": "cdi-mongo-connect",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "mongo connect once",
   "main": "index.js",
   "scripts": {
